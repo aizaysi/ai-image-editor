@@ -76,6 +76,7 @@ export default function ImageEditor() {
 
   const getCanvasData = async (canvas: HTMLCanvasElement | null) => {
     return new Promise((resolve, reject) => {
+      console.log('reject', reject)
       canvas?.toBlob(resolve);
     });
   };
@@ -106,6 +107,7 @@ export default function ImageEditor() {
     if (!canvas || !context) return;
   
     return new Promise((resolve, reject) => {
+      console.log('reject', reject)
       const img = new Image();
       img.crossOrigin = "anonymous";
   
@@ -138,6 +140,7 @@ export default function ImageEditor() {
   };
 
   const onGenerate = (imageSrc: string, prompt: string) => {
+    console.log('prompt', prompt)
     setSrc(imageSrc);
   };
 
